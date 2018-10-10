@@ -8,6 +8,7 @@ urlpatterns=[
     url(r'^$',views.home,name = 'home'),
     url(r'^signup/', views.register, name='signup'),
     url(r'^user/(?P<username>\w+)', views.profile, name='profile'),
+    url(r'^upload/$', views.upload_project, name='upload_project'),
 
 ]
 
