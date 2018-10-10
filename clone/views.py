@@ -16,7 +16,7 @@ def home(request):
 
 def register(request):
     if request.user.is_authenticated():
-        return redirect('instagram')
+        return redirect('home')
     else:
         if request.method == 'POST':
             form = RegistrationForm(request.POST)
