@@ -34,3 +34,37 @@ class Profile(models.Model):
     def filter_by_id(cls, id):
         profile = Profile.objects.filter(user=id).first()
         return profile
+
+
+class Project(models.Model):
+    '''
+    This is project class model
+    '''
+    title = models.CharField(max_length =60)
+    image = models.ImageField(upload_to='image/', null=True)
+    description = models.CharField(max_length =100)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    profile = models.ForeignKey(User)
+    url = models.TextField()
+    rating = models.TextField()
+    # likes = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+    def save_project(self):
+        self.save()
+
+
+    def delete_project(self):
+        self.delete()
+
+    def update_caption(self):
+        self.save()
+
+    def get_project_id(cls, id):
+        project = Project.objects.get(pk=id)
+        return project
+
+    class Meta:
+        ordering = ('-pub_date',)
