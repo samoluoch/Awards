@@ -65,3 +65,16 @@ def upload_project(request):
     return render(request, 'profile/upload_project.html', {'form': form})
 
 
+
+def search_profile(request):
+    if 'profile' in request.GET and request.GET['profile']:
+        search_term = request.GET.get('profile')
+        profiles = Profile.search_profile(search_term)
+        message = f'{search_term}'
+
+        return render(request, 'search.html',{'message':message, 'profiles':profiles})
+    else:
+        message = 'Type profile'
+        return render(request, 'search.html', {'message':message})
+
+
