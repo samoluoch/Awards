@@ -20,17 +20,17 @@ class Profile(models.Model):
     class Meta:
         ordering = ['bio']
 
-    # @classmethod
-    # def search_profile(cls, name):
-    #     profile = Profile.objects.filter(user__username__icontains=name)
-    #     return profile
-    #
-    # @classmethod
-    # def get_by_id(cls, id):
-    #     profile = Profile.objects.get(user=id)
-    #     return profile
-    #
-    # @classmethod
-    # def filter_by_id(cls, id):
-    #     profile = Profile.objects.filter(user=id).first()
-    #     return profile
+    @classmethod
+    def search_profile(cls, name):
+        profile = Profile.objects.filter(user__username__icontains=name)
+        return profile
+
+    @classmethod
+    def get_by_id(cls, id):
+        profile = Profile.objects.get(user=id)
+        return profile
+
+    @classmethod
+    def filter_by_id(cls, id):
+        profile = Profile.objects.filter(user=id).first()
+        return profile
