@@ -9,6 +9,7 @@ urlpatterns=[
     url(r'^signup/', views.register, name='signup'),
     url(r'^user/(?P<username>\w+)', views.profile, name='profile'),
     url(r'^upload/$', views.upload_project, name='upload_project'),
+    url(r'^search/', views.search_profile, name='search_profile'),
 
 ]
 
