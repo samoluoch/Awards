@@ -14,3 +14,9 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         exclude = ['pub_date', 'profile', 'rating']
+
+
+class EditProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ['user']

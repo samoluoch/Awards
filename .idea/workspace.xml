@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958da273-8890-4e6a-bf46-abf37c13c64d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/awards/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clone/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clone/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clone/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clone/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +26,7 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="11" />
           <entry key="md" value="1" />
-          <entry key="py" value="19" />
+          <entry key="py" value="22" />
           <entry key="static" value="1" />
           <entry key="templates" value="1" />
           <entry key="txt" value="3" />
@@ -37,7 +37,7 @@
           <entry key="HTML" value="11" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="19" />
+          <entry key="Python" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -46,33 +46,20 @@
           <entry key="env" value="15" />
           <entry key="gitignore" value="18" />
           <entry key="html" value="127" />
-          <entry key="py" value="315" />
+          <entry key="py" value="318" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="127" />
           <entry key="PLAIN_TEXT" value="39" />
-          <entry key="Python" value="315" />
+          <entry key="Python" value="318" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clone/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-                <marker date="1539173966287" expanded="true" signature="281:286" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,23 +70,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
+        <entry file="file://$PROJECT_DIR$/awards/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="446">
+              <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
               <folding>
-                <element signature="e#22#31#0" expanded="true" />
+                <element signature="e#308#317#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clone/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clone/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="586">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+                <marker date="1539194027466" expanded="true" signature="281:286" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/awards/settings.py">
+        <entry file="file://$PROJECT_DIR$/clone/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+            <state relative-caret-position="315">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
-                <element signature="e#308#317#0" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,15 +172,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clone/migrations/0001_initial.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -191,12 +195,10 @@
         <option value="$PROJECT_DIR$/clone/templates/registration/base.html" />
         <option value="$PROJECT_DIR$/clone/templates/profile/profile.html" />
         <option value="$PROJECT_DIR$/clone/models.py" />
-        <option value="$PROJECT_DIR$/clone/forms.py" />
         <option value="$PROJECT_DIR$/clone/templates/profile/upload_project.html" />
         <option value="$PROJECT_DIR$/clone/templates/home.html" />
         <option value="$PROJECT_DIR$/clone/templates/navbar.html" />
         <option value="$PROJECT_DIR$/clone/templates/search.html" />
-        <option value="$PROJECT_DIR$/clone/views.py" />
         <option value="$PROJECT_DIR$/clone/urls.py" />
         <option value="$PROJECT_DIR$/clone/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/.env" />
@@ -204,6 +206,8 @@
         <option value="$PROJECT_DIR$/clone/templates/registration/logout.html" />
         <option value="$PROJECT_DIR$/awards/urls.py" />
         <option value="$PROJECT_DIR$/awards/settings.py" />
+        <option value="$PROJECT_DIR$/clone/views.py" />
+        <option value="$PROJECT_DIR$/clone/forms.py" />
       </list>
     </option>
   </component>
@@ -381,16 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clone/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clone/templates/profile/upload_project.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -416,16 +410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clone/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clone/templates/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -447,17 +431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clone/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <marker date="1539173966287" expanded="true" signature="281:286" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -533,10 +506,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/awards/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        <state relative-caret-position="446">
+          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
           <folding>
             <element signature="e#308#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clone/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clone/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <marker date="1539194027466" expanded="true" signature="281:286" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clone/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
