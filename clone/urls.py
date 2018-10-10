@@ -6,6 +6,7 @@ from django.conf import settings
 urlpatterns=[
     # url(r'^instagram/$',views.instagram,name = 'instagram'),
     url(r'^$',views.home,name = 'home'),
+    url(r'^signup/', views.register, name='signup'),
 
 ]
 
