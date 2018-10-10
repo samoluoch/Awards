@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import Profile,Project
 from django.contrib.auth.models import User
 from .forms import RegistrationForm,ProjectForm
+from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -48,7 +50,7 @@ def profile(request,username):
     return render(request, 'profile/profile.html', {'title':title, 'profile':profile, 'profile_details':profile_details, 'images':images})
 
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def upload_project(request):
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)

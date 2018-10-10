@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container-fluid" style="background-color: #F7F7F7; margin-top: -20px;">
+    <div class="row">
+
+        {% if profiles%}
+        <h2>Found {{profiles|length}} of searched profile</h2>
+        {% else %}
+        <h2>That username does not exist</h2>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if profiles %}
+        {%for profile in profiles %}
+
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <a href="/user/{{profile.user.username}}" class="text-center"><h1 id="username"><b><i>{{profile.user.username}}</i></b></h1></a>
+
+        </div>
+        {% endfor %}
+        {% endif %}
+</div>
+</div>
+{% endblock %}
+
+
