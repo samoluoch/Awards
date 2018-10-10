@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Profile
+from .models import Profile,Project
 from django.contrib.auth.models import User
 from .forms import RegistrationForm
 
@@ -48,5 +48,18 @@ def profile(request,username):
     return render(request, 'profile/profile.html', {'title':title, 'profile':profile, 'profile_details':profile_details, 'images':images})
 
 
+@login_required(login_url='/login')
+def upload_project(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            upload = form.save(commit=False)
+            upload.profile = request.user
+            upload.save()
+            return redirect('profile',username=request.user)
+    else:
+        form = ProjectForm()
+
+    return render(request, 'profile/upload_project.html', {'form': form})
 
 
