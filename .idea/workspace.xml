@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958da273-8890-4e6a-bf46-abf37c13c64d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/clone/templates/registration/logout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awards/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/awards/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clone/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clone/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clone/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clone/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +24,7 @@
           <entry key="Procfile" value="1" />
           <entry key="env" value="2" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="10" />
+          <entry key="html" value="11" />
           <entry key="md" value="1" />
           <entry key="py" value="17" />
           <entry key="static" value="1" />
@@ -38,7 +34,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="10" />
+          <entry key="HTML" value="11" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Python" value="17" />
@@ -49,13 +45,13 @@
           <entry key="Procfile" value="6" />
           <entry key="env" value="15" />
           <entry key="gitignore" value="18" />
-          <entry key="html" value="110" />
+          <entry key="html" value="127" />
           <entry key="py" value="302" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="110" />
+          <entry key="HTML" value="127" />
           <entry key="PLAIN_TEXT" value="39" />
           <entry key="Python" value="302" />
         </counts>
@@ -64,18 +60,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clone/templates/search.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clone/templates/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -130,14 +114,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clone/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clone/templates/registration/logout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -204,6 +197,7 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/awards/settings.py" />
         <option value="$PROJECT_DIR$/clone/admin.py" />
+        <option value="$PROJECT_DIR$/clone/templates/registration/logout.html" />
       </list>
     </option>
   </component>
@@ -241,6 +235,12 @@
               <item name="Awards" type="462c0819:PsiDirectoryNode" />
               <item name="clone" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Awards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Awards" type="462c0819:PsiDirectoryNode" />
+              <item name="clone" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -521,10 +521,17 @@
     <entry file="file://$PROJECT_DIR$/clone/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clone/templates/registration/logout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
