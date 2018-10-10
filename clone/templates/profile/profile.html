@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ form.media }}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    {% if profile_details %}
+                    <img src="{{profile_details.photo.url}}" alt="photo">
+                    {% else %}
+                    <img src="/static/images/dp.jpg" alt="avatar" width='200' height='200' style="align: center;">
+                    {% endif %}
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" style="background-color: #F7F7F7;">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <h2 style="color: green;">
+                                <span class="username">username: {{ profile.username }}</span></h2>
+                        </li>
+                        {% if profile.username == user.username %}
+                        <li class="list-inline-item">
+                            <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Your Profile</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a data-toggle="modal" data-target="#settings"><i class="fa fa-cog fa-2x"></i></a>
+                        </li>
+                        <img src="{{profile.image.url}}"  width='500' height='500' alt="">
+                        {% else %}
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-primary">Follow</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+                        </li>
+                        {% endif %}
+                        <li>
+    <a href="/upload/" class="btn btn-primary">Upload Image</a>
+</li>
+
+                    </ul>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span class="font-weight-bold">{{images|length}} </span> Posts
+                        </li>
+                        <li class="list-inline-item">
+                            <span class="font-weight-bold">0 </span> Followers
+                        </li>
+                        <li class="list-inline-item">
+                            <span class="font-weight-bold">0 </span> Following
+                        </li>
+                    </ul>
+                    <h2>Profile Bio</h2>
+                    <h4 class="font3">{{profile_details.bio|safe}}</h4>
+                    {% if profile.username == user.username %}
+                    <!--<p><a href="{% url 'upload_image' %}" class="btn btn-primary">Add Image</a></p>-->
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        {% for image in images %}
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <br><br>
+<button type="button" data-toggle="modal" data-target="#myModal{{image.id}}">
+
+            <img class="well" src="{{image.image.url}}"  width='500' height='500' alt="" class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="backgrounds-color: white;">
+                </button>            <h5>{{image.pub_date|timesince}} ago</h5>
+            <h5><b>Caption:</b> {{image.caption}}</h5>
+            <h5><b>Likes:</b> {{image.likes}}</h5>
+            <h5 class="displaying comments on an image"><br><br><b>Comments:</b>
+                <a class="view-more"></a>
+                          {% for comment in image.comments_set.all %}
+                            <li class="comment-list__comment">
+                              <a href="{% url 'profile' username=comment.profile.username }" class="user">
+                                {{ comment.user.username }}
+                              </a>
+                              <span class="comment">{{ comment.comment }}</span>
+                            </li>
+                          {% endfor %}
+
+
+
+                            {% if request.user.is_authenticated %}
+                          <section class="input-row">
+                            <i class="fa # submit-like" aria-hidden="true"></i>
+                            <div class="comment-input-wrapper">
+                                <form action="{% url 'comment' image_id=image.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input class="add-comment" name="comment" id="comment{{image.id}}" type="text" placeholder="Comment on this image....">
+
+                                </form>
+                            </div>
+                            <div class="hidden-data {{ image.pk }}" style="display: none;">
+                              <span class="image-pk">{{ image.pk }}</span>
+                            </div>
+                          </section>
+                        {% endif %}
+            </h5>
+        </div>
+        {% empty %}
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <h2>Please upload images</h2>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body"><ul class="list-group">
+            <li class="list-group-item text-center"><a href="#">Edit Profile</a></li>
+            <li class="list-group-item text-center"><a href="/logout/">Log Out</a></li>
+            <li class="list-group-item text-center"><a data-dismiss="modal">Cancel</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% for image in images %}
+<!-- modal content -->
+<div class="modal fade" id="myModal{{image.id}}" role="dialog">
+   <div class="modal-dialog">
+
+       <div class="modal-content">
+           <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+
+           </div>
+
+           <div class="modal-body">
+                              <img src="{{image.image.url }}" alt="" width="500" height="500">
+
+           </div>
+
+
+           <div class="modal-footer">
+               <h3>Image Details</h3>
+               <h5 style="color: green;">{{image.pub_date|timesince}} ago</h5>
+                <h5 style="color: green;"><b>Likes:</b> {{image.likes}}</h5>
+                <h5 style="color: green;"><b>Caption:</b> {{image.caption}}</h5>
+
+
+           </div>
+       </div>
+   </div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}
