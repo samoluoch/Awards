@@ -2,4 +2,102 @@
 
 {% block content %}
 <h1>Awards</h1>
+
+
+
+{% for project in projects %}
+<div class="container-fluid" style="background-color: #F7F7F7; margin-top: -20px;">
+    <div class="row">
+        <br><br>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="float: right;">
+
+            <h5 style="color: black;" class="col-xs-10 col-sm-10 col-md-10 col-lg-10"><b><i>{{image.profile}}</i></b></h5>
+            <button type="button" data-toggle="modal" data-target="#myModal{{project.id}}">
+
+            <img class="well" src="{{project.image.url}}"  width='500' height='500' alt="" class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="backgrounds-color: white;">
+                </button>
+            <h5><b>Title:</b> {{project.title}}</h5>
+            <h5><b>Posted By:</b> {{project.profile}}</h5>
+            <h5><b>Description:</b> {{project.description}}</h5>
+            <h5>{{image.pub_date|timesince}} ago</h5>
+
+
+
+        </div>
+        <!--<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">-->
+
+            <!--<h5><b>{{image.profile}}</b></h5>-->
+
+
+            <!--<h5>{{profile.first_name}}</h5>-->
+        <!--</div>-->
+    </div>
+</div>
+{% endfor %}
+
+{% for project in projects %}
+<!-- modal content -->
+<div class="modal fade" id="myModal{{project.id}}" role="dialog" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+   <div class="modal-dialog">
+
+       <div class="modal-content">
+           <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+               <h4 class="modal-title">{{ project.name }}</h4>
+           </div>
+
+           <div class="modal-body" class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
+                              <img src="{{project.image.url }}" alt="" width="500" height="500">
+
+           </div>
+
+
+           <div class="modal-footer" class="well" class="jumbotron">
+               <h3>Image Details</h3>
+               <h5 style="color: green;">{{project.pub_date|timesince}} ago</h5>
+                <h5 style="color: green;"><b>Posted By:</b> {{project.profile}}</h5>
+                <h5 style="color: green;"><b>Title:</b> {{project.title}}</h5>
+                <h5 style="color: green;"><b>Description:</b> {{project.description}}</h5>
+
+           </diviv>
+   </div>
+</div>
+{% endfor %}
+
+
+
+
+
 {%endblock%}
+
+
+       <!--<h5 class="displaying comments on an image"><br><br><b>Comments:</b>-->
+                <!--<a class="view-more"></a>-->
+                          <!--{% for comment in image.comments_set.all %}-->
+                            <!--<li class="comment-list__comment">-->
+                              <!--<a href="{% url 'profile' username=comment.profile.username }" class="user">-->
+                                <!--{{ comment.user.username }}-->
+                              <!--</a>-->
+                              <!--<span class="comment">{{ comment.comment }}</span>-->
+                            <!--</li>-->
+                          <!--{% endfor %}-->
+
+
+
+                            <!--{% if request.user.is_authenticated %}-->
+                          <!--<section class="input-row">-->
+                            <!--<i class="fa # submit-like" aria-hidden="true"></i>-->
+                            <!--<div class="comment-input-wrapper">-->
+                                <!--<form action="{% url 'comment' image_id=image.id %}" method="post">-->
+                                    <!--{% csrf_token %}-->
+                                    <!--<input class="add-comment" name="comment" id="comment{{image.id}}" type="text" placeholder="Comment on this image....">-->
+
+                                <!--</form>-->
+                            <!--</div>-->
+                            <!--<div class="hidden-data {{ image.pk }}" style="display: none;">-->
+                              <!--<span class="image-pk">{{ image.pk }}</span>-->
+                            <!--</div>-->
+                          <!--</section>-->
+                        <!--{% endif %}-->
+            <!--</h5>-->
