@@ -54,13 +54,15 @@
         {% for project in projects %}
         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
             <br><br>
+
+            <h3 style="color: green;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">Your Projects' List</h3>
 <button type="button" data-toggle="modal" data-target="#myModal{{project.id}}">
 
             <img class="well" src="{{project.image.url}}"  width='500' height='500' alt="" class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="backgrounds-color: white;">
-                </button>            <h5>{{image.pub_date|timesince}} ago</h5>
-            <h5><b>Caption:</b> {{project.description}}</h5>
-            <h5><b>Likes:</b> {{image.likes}}</h5>
-            
+                </button>            <h5>{{project.pub_date|timesince}} ago</h5>
+            <h5><b>Description:</b> {{project.description}}</h5>
+            <h5><b>URL:</b> {{project.url}}</h5>
+
         </div>
         {% empty %}
         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
