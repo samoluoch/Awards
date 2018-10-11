@@ -42,3 +42,8 @@
 </div>
 
 {% endblock %}
+
+{% block scripts %} {{block.super}}
+       {% load static %}
+  <script type="text/javascript" src="{%static 'js/newsletter.js'%}"></script>
+{% endblock %}
