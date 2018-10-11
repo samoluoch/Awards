@@ -68,3 +68,21 @@ class Project(models.Model):
 
     class Meta:
         ordering = ('-pub_date',)
+
+    @classmethod
+    def search_profile(cls, search_term):
+        profiles = cls.objects.filter(profile__icontains=search_term)
+        return profiles
+
+    @classmethod
+    def get_profile_projects(cls, profile):
+        projects = Project.objects.filter(profile__id=profile)
+        return projects
+
+    @classmethod
+    def all_projects(cls):
+        images = cls.objects.all()
+        return images
+
+    def __str__(self):
+        return self.name
