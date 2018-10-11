@@ -72,6 +72,11 @@
 {%endblock%}
 
 
+       {% block scripts %} {{block.super}}
+  <script type="text/javascript" src="{%static 'js/newsletter.js'%}"></script>
+{% endblock %}
+
+
        <!--<h5 class="displaying comments on an image"><br><br><b>Comments:</b>-->
                 <!--<a class="view-more"></a>-->
                           <!--{% for comment in image.comments_set.all %}-->
