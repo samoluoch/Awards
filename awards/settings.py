@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'clone.apps.CloneConfig',
     'bootstrap3',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
