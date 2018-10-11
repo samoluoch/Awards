@@ -45,10 +45,10 @@ def profile(request,username):
         profile_details = Profile.get_by_id(profile.id)
     except:
         profile_details = Profile.filter_by_id(profile.id)
-    images = Project.get_profile_projects(profile.id)
-    title = f'@{profile.username} Instagram photos and videos'
+    projects = Project.get_profile_projects(profile.id)
+    title = f'@{profile.username} Projects'
 
-    return render(request, 'profile/profile.html', {'title':title, 'profile':profile, 'profile_details':profile_details, 'images':images})
+    return render(request, 'profile/profile.html', {'title':title, 'profile':profile, 'profile_details':profile_details, 'projects':projects})
 
 
 # @login_required(login_url='/login')

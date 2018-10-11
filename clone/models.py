@@ -81,8 +81,8 @@ class Project(models.Model):
 
     @classmethod
     def all_projects(cls):
-        images = cls.objects.all()
-        return images
+        projects = cls.objects.all()
+        return projects
 
     def __str__(self):
-        return self.name
+        return self.title
