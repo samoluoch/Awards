@@ -43,6 +43,13 @@ LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
 
 
+# REST api framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
 
 
 # Application definition
@@ -57,6 +64,7 @@ INSTALLED_APPS = [
     'clone.apps.CloneConfig',
     'bootstrap3',
     'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
