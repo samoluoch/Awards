@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from .forms import RegistrationForm,ProjectForm,EditProfileForm
 from django.contrib.auth.decorators import login_required
 # from django.contrib.messages.context_processors.messages import
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import MerchSerializer
 
 
 
@@ -92,6 +95,19 @@ def edit_profile(request):
         form = EditProfileForm()
 
     return render(request, 'profile/edit_profile.html', {'form':form})
+
+
+class MerchList(APIView):
+    def get_profile(self, request, format=None):
+        all_merch_profiles = Profile.objects.all()
+        serializers = MerchSerializer(all_merch_profiles, many=True)
+        return Response(serializers.data)
+
+    def get_projects(self, request, format=None):
+        all_merch_projects = Project.objects.all()
+        serializers = MerchSerializer(all_merch_projects, many=True)
+        return Response(serializers.data)
+
 
 
 

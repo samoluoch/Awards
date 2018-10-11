@@ -12,6 +12,7 @@ urlpatterns=[
     url(r'^search/', views.search_profile, name='search_profile'),
     url(r'^edit/', views.edit_profile, name='edit_profile'),
     url(r'^upload/$', views.upload_project, name='upload_image'),
+    url(r'^api/merch/$', views.MerchList.as_view())
 
 ]
 
