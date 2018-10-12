@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958da273-8890-4e6a-bf46-abf37c13c64d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/clone/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clone/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clone/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clone/forms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,7 @@
           <entry key="env" value="15" />
           <entry key="gitignore" value="18" />
           <entry key="html" value="1082" />
-          <entry key="py" value="1021" />
+          <entry key="py" value="1050" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -58,7 +58,7 @@
           <entry key="CSS" value="27" />
           <entry key="HTML" value="1082" />
           <entry key="PLAIN_TEXT" value="39" />
-          <entry key="Python" value="1021" />
+          <entry key="Python" value="1050" />
         </counts>
       </usages-collector>
     </session>
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clone/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="712">
+              <caret line="127" column="36" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -107,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clone/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="405">
+              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -230,7 +230,6 @@
         <option value="$PROJECT_DIR$/clone/templates/profile/edit_profile.html" />
         <option value="$PROJECT_DIR$/static/js/clone.js" />
         <option value="$PROJECT_DIR$/clone/templates/search.html" />
-        <option value="$PROJECT_DIR$/clone/forms.py" />
         <option value="$PROJECT_DIR$/clone/serializer.py" />
         <option value="$PROJECT_DIR$/awards/urls.py" />
         <option value="$PROJECT_DIR$/clone/urls.py" />
@@ -239,6 +238,7 @@
         <option value="$PROJECT_DIR$/clone/templates/home.html" />
         <option value="$PROJECT_DIR$/clone/templates/profile/profile.html" />
         <option value="$PROJECT_DIR$/clone/models.py" />
+        <option value="$PROJECT_DIR$/clone/forms.py" />
       </list>
     </option>
   </component>
@@ -569,16 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clone/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clone/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-579">
@@ -644,10 +634,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clone/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="712">
+          <caret line="127" column="36" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clone/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
