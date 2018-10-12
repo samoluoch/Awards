@@ -86,3 +86,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Rate(models.Model):
+    design = models.FloatField(default=0.0)
+    usability = models.FloatField(default=0.0)
+    content = models.FloatField(default=0.0)
+    profile = models.ForeignKey(Profile, related_name='profile_rating')
+    project = models.ForeignKey(Project, related_name='project_rating')
