@@ -84,6 +84,10 @@ class Project(models.Model):
         projects = cls.objects.all()
         return projects
 
+    @classmethod
+    def get_single_project(cls, project_id):
+        return cls.objects.get(pk=project_id)
+
     def __str__(self):
         return self.title
 
@@ -128,6 +132,10 @@ class Rate(models.Model):
         rating = sum(rated[0:len(rated)]) / len(rated)
         print(rating)
         return rating
+
+    @classmethod
+    def get_last_project(cls):
+        return cls.objects.last()
 
 
 

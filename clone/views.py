@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Profile,Project
+from .models import Profile,Project,Rate
 from django.contrib.auth.models import User
-from .forms import RegistrationForm,ProjectForm,EditProfileForm
+from .forms import RegistrationForm,ProjectForm,EditProfileForm,RateForm
 from django.contrib.auth.decorators import login_required
 # from django.contrib.messages.context_processors.messages import
 from rest_framework.response import Response
@@ -115,6 +115,38 @@ class MerchList(APIView):
             serializers.save()
             return Response(serializers.data, status=status.HTTP_201_CREATED)
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def rate(request, project_id):
+        if request.user.is_authenticated:
+            user = request.user
+            projects = Project.get_single_project(project_id)
+            if request.method == 'POST':
+                rate = RateForm(request.POST)
+                print(rate.is_valid())
+                if rate.is_valid():
+                    rate.save()
+                    rating = Rate.get_last_project()
+                    rating.user = user
+                    rating.post = projects
+                    rating.save()
+                    return redirect('home')
+            else:
+                rate = RateForm()
+
+            context = {
+                'rate_form': rate
+            }
+            return render(request, 'rate.html', context)
+        return redirect('home')
+
+
+
+
+
+
+
+
+
 
 
 # class MerchListProfile(APIView):
