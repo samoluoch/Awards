@@ -17,11 +17,7 @@ from decouple import config,Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 MODE=config("MODE", default="dev")
-
-
 DEBUG = config('DEBUG', default=False, cast=bool)
-
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -36,7 +32,8 @@ SECRET_KEY = '@(2x%p-rlw8m1)ux#&i9qt#8tjk*c^xk5kl2(oe)tpwav5$q*+'
 DEBUG = True
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 LOGOUT_REDIRECT_URL = 'home'
@@ -64,7 +61,8 @@ INSTALLED_APPS = [
     'clone.apps.CloneConfig',
     'bootstrap3',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -171,3 +169,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())

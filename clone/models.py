@@ -42,10 +42,10 @@ class Project(models.Model):
     '''
     title = models.CharField(max_length =60)
     image = models.ImageField(upload_to='image/', null=True)
-    description = models.CharField(max_length =100)
+    description = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey(User)
-    url = models.TextField()
+    url = models.URLField(max_length =100)
     rating = models.TextField()
     # likes = models.BooleanField(default=False)
 

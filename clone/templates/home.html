@@ -19,7 +19,9 @@
             <h5><b>Title:</b> {{project.title}}</h5>
             <h5><b>Posted By:</b> {{project.profile}}</h5>
             <h5><b>Description:</b> {{project.description}}</h5>
-            <h5>{{image.pub_date|timesince}} ago</h5>
+            <h5><b>Submitted:</b> {{project.pub_date|timesince}} ago</h5>
+            <h5><b>URL:</b> {{project.url}}</h5>
+
 
 
 
@@ -60,9 +62,10 @@
                 <h5 style="color: green;"><b>Title:</b> {{project.title}}</h5>
                 <h5 style="color: green;"><b>Description:</b> {{project.description}}</h5>
 
-           </diviv>
+           </div>
    </div>
 </div>
+   </div>
 {% endfor %}
 
 
