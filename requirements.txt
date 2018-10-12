@@ -9,6 +9,7 @@ django-js-asset==1.1.0
 django-mptt==0.9.1
 django-registration==2.4.1
 django-tinymce==2.7.0
+djangorestframework==3.8.2
 gunicorn==19.9.0
 Pillow==5.2.0
 psycopg2==2.7.5
