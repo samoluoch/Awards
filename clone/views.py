@@ -99,12 +99,12 @@ def edit_profile(request):
 
 
 class MerchList(APIView):
-    def get_profile(self, request, format=None):
+    def get(self, request, format=None):
         all_merch_profiles = Profile.objects.all()
         serializers = MerchSerializer(all_merch_profiles, many=True)
         return Response(serializers.data)
 
-    def get_projects(self, request, format=None):
+    def get(self, request, format=None):
         all_merch_projects = Project.objects.all()
         serializers = MerchSerializer(all_merch_projects, many=True)
         return Response(serializers.data)
@@ -117,6 +117,21 @@ class MerchList(APIView):
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# class MerchListProfile(APIView):
+#     def get(self, request, format=None):
+#         all_merch_profiles = Profile.objects.all()
+#         serializers = MerchSerializer(all_merch_profiles, many=True)
+#         return Response(serializers.data)
+#
+#
+#
+#     def post(self, request, format=None):
+#         serializers = MerchSerializer(data=request.data)
+#         if serializers.is_valid():
+#             serializers.save()
+#             return Response(serializers.data, status=status.HTTP_201_CREATED)
+#         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+#
 
 
 
