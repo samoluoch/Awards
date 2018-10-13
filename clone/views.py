@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import MerchSerializer
 from rest_framework import status
+import datetime
 
 
 
@@ -18,7 +19,6 @@ from rest_framework import status
 def home(request):
     projects = Project.objects.all()
     return render(request,'home.html',{"projects":projects})
-    # return render(request,'home.html')
 
 
 def register(request):
@@ -51,6 +51,7 @@ def profile(request,username):
         profile_details = Profile.filter_by_id(profile.id)
     projects = Project.get_profile_projects(profile.id)
     title = f'@{profile.username} Projects'
+
 
     return render(request, 'profile/profile.html', {'title':title, 'profile':profile, 'profile_details':profile_details, 'projects':projects})
 
@@ -116,28 +117,28 @@ class MerchList(APIView):
             return Response(serializers.data, status=status.HTTP_201_CREATED)
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def rate(request, project_id):
-        if request.user.is_authenticated:
-            user = request.user
-            projects = Project.get_single_project(project_id)
-            if request.method == 'POST':
-                rate = RateForm(request.POST)
-                print(rate.is_valid())
-                if rate.is_valid():
-                    rate.save()
-                    rating = Rate.get_last_project()
-                    rating.user = user
-                    rating.post = projects
-                    rating.save()
-                    return redirect('home')
-            else:
-                rate = RateForm()
+def rate(request, project_id):
+    if request.user.is_authenticated:
+        user = request.user
+        projects = Project.get_single_project(project_id)
+        if request.method == 'POST':
+            rates = RateForm(request.POST)
+            print(rates.is_valid())
+            if rates.is_valid():
+                rates.save()
+                rating = Rate.get_last_project()
+                rating.user = user
+                rating.post = projects
+                rating.save()
+                return redirect('home')
+        else:
+            rates = RateForm()
 
-            context = {
-                'rate_form': rate
-            }
-            return render(request, 'rate.html', context)
-        return redirect('home')
+        context = {
+            'rate_form': rates
+        }
+        return render(request, 'rate.html', context)
+    return redirect('home')
 
 
 

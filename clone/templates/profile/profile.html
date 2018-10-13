@@ -12,6 +12,7 @@
                     {% else %}
                     <img src="/static/images/dp.jpg" alt="avatar" width='200' height='200' style="align: center;">
                     {% endif %}
+
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <!--{% if profile_details %}-->
@@ -24,8 +25,10 @@
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <h4 style="color: black;">
-                                <span class="username"><h3 style="color: green;">username:</h3> {{ profile.username }}</span></h4>
-                            <span class="username"><h3 style="color: green;">email:</h3> {{ profile.email }}</span></h4>
+                                <span class="username"><h3 style="color: green;">Username:</h3> {{ profile.username }}</span></h4>
+                            <span class="username"><h3 style="color: green;">Email:</h3> {{ profile.email }}</span></h4>
+                            <h4><h3 style="color: green;">Joined On:</h3> {{ request.user.date_joined }}</h4>
+                            <h4><h3 style="color: green;">Last Login:</h3> {{ request.user.last_login }}</h4>
 
                         </li>
                         {% if profile.username == user.username %}
@@ -44,7 +47,7 @@
                     </ul>
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <span class="font-weight-bold">You have posted <h4 style="color:green">{{projects|length}} </h4></span> Projects
+                            <span class="font-weight-bold"><h3 style="color: green;">Projects Posted:</h3> You have posted <h4 style="color:green">{{projects|length}} </h4></span> Projects
                         </li>
                     </ul>
                     <h2>Profile Bio</h2>
@@ -129,3 +132,36 @@
 
 
 {% endblock %}
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+
+        <h4>Account Details</h4>
+
+        <hr>
+
+        <div class="horizontal">
+            <p>Username</p>
+            <p>{{ request.user.username }}</p>
+
+            <p>Email</p>
+            <p>{{ request.user.email }}</p>
+
+            <p>Date Joined</p>
+            <p>{{ request.user.date_joined }}</p>
+
+            <p>Last Login</p>
+            <p>{{ request.user.last_login }}</p>
+
+            <p>Snippet created</p>
+            <p>{{ request.user.profile.get_snippet_count }}</p>
+        </div>
+
+    </div>
+
+
+    <div>
+        <p>{{ project.name }}</p>
+        <div class="container w-100">
+            <img class="w-100" src="{{ post.landing_image.url }}" alt="">
+        </div>
+    </div>

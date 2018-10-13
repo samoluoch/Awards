@@ -4,7 +4,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    # url(r'^instagram/$',views.instagram,name = 'instagram'),
     url(r'^$',views.home,name = 'home'),
     url(r'^signup/', views.register, name='signup'),
     url(r'^user/(?P<username>\w+)', views.profile, name='profile'),
@@ -14,6 +13,7 @@ urlpatterns=[
     url(r'^upload/$', views.upload_project, name='upload_image'),
     url(r'^api/merch/$', views.MerchList.as_view()),
     # url(r'^api/merchprofile/$', views.MerchListProfile.as_view())
+    url(r'^rate/project/(\d+)$', views.rate, name='rate'),
 
 ]
 

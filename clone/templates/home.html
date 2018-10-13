@@ -59,9 +59,57 @@
    </div>
 </div>
    </div>
+
+
+
+
+<!--Start Rating-->
+<div class="d-flex justify-content-center mt-3 mb-5">
+                   <div class="mx-2 ratings">
+                       <div class="circle border-red text-center d-flex align-items-center justify-content-center">
+                           <div class="text-white">
+                               <span class="int font-weight-bold">{{ average_design_w }}</span>
+                               <span class="dec">.{{ average_design_d }}</span>
+                           </div>
+                       </div>
+                       <div class="p-2 text-center">
+                           <h2 class="light-grey f-12">DESIGN</h2>
+                       </div>
+                   </div>
+                   <div class="mx-2 ratings">
+                       <div class="circle border-warning text-center d-flex align-items-center justify-content-center">
+                           <div class="text-white">
+                               <span class="int font-weight-bold">{{ average_usability_w }}</span>
+                               <span class="dec">.{{ average_usability_d }}</span>
+                           </div>
+                       </div>
+                       <div class="p-2 text-center">
+                           <h2 class="light-grey f-12">USABILITY</h2>
+                       </div>
+                   </div>
+
+                   <div class="mx-2 ratings">
+                       <div class="circle border-info text-center d-flex align-items-center justify-content-center">
+                           <div class="text-white">
+                               <span class="int font-weight-bold">{{ average_content_w }}</span>
+                               <span class="dec">.{{ average_content_d }}</span>
+                           </div>
+                       </div>
+                       <div class="p-2 text-center">
+                           <h2 class="light-grey f-12">CONTENT</h2>
+                       </div>
+                   </div>
+
+               </div>
+
+<!--End of rating-->
+
+
+
+
+
+
 {% endfor %}
-
-
 
 
 
