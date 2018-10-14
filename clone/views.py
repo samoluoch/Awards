@@ -133,7 +133,7 @@ class MerchList(APIView):
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
+@login_required(login_url='/login')
 def add_usability(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     if request.method == 'POST':
@@ -149,6 +149,7 @@ def add_usability(request, project_id):
 
     return render(request, 'home.html')
 
+@login_required(login_url='/login')
 def add_design(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     if request.method == 'POST':
@@ -165,6 +166,9 @@ def add_design(request, project_id):
         form = DesignForm()
 
     return render(request, 'home.html',{'form': form})
+
+
+@login_required(login_url='/login')
 def add_content(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     if request.method == 'POST':
