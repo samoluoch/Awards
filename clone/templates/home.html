@@ -62,19 +62,19 @@
               <form  action="{%url 'add_design' project_id=project.id %}" method="POST">
     {%csrf_token%}
     {% bootstrap_form form layout='inline' %}
-    <input type="submit" value="Subscribe">
+    <input type="submit" value="Rate">
   </form>
             <h4>Rate By Content</h4>
   <form  action="{%url 'review_content' project_id=project.id %}" method="POST">
     {%csrf_token%}
     {% bootstrap_form form layout='inline' %}
-    <input type="submit" value="Subscribe">
+    <input type="submit" value="Rate">
   </form>
              <h4>Rate By Usability</h4>
               <form  action="{%url 'review_usability' project_id=project.id %}" method="POST">
     {%csrf_token%}
     {% bootstrap_form form layout='inline' %}
-    <input type="submit" value="Subscribe">
+    <input type="submit" value="Rate">
   </form>
 
 
