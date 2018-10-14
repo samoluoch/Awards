@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958da273-8890-4e6a-bf46-abf37c13c64d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clone/templates/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/clone/templates/profile/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clone/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/clone/templates/search.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +49,7 @@
           <entry key="css" value="27" />
           <entry key="env" value="15" />
           <entry key="gitignore" value="18" />
-          <entry key="html" value="2414" />
+          <entry key="html" value="2419" />
           <entry key="md" value="1472" />
           <entry key="py" value="1767" />
         </counts>
@@ -58,7 +57,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="27" />
-          <entry key="HTML" value="2414" />
+          <entry key="HTML" value="2419" />
           <entry key="Markdown" value="1472" />
           <entry key="PLAIN_TEXT" value="39" />
           <entry key="Python" value="1767" />
@@ -158,11 +157,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clone/templates/profile/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+            <state relative-caret-position="315">
+              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -212,13 +211,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clone/templates/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="539">
+              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#0;n#h5#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#0;n#h5#1;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#0;n#h5#2;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -253,6 +253,7 @@
       <find>form</find>
       <find>profile</find>
       <find>alig</find>
+      <find>my</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -286,9 +287,9 @@
         <option value="$PROJECT_DIR$/clone/urls.py" />
         <option value="$PROJECT_DIR$/clone/views.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/clone/templates/search.html" />
         <option value="$PROJECT_DIR$/clone/templates/home.html" />
         <option value="$PROJECT_DIR$/clone/templates/profile/profile.html" />
+        <option value="$PROJECT_DIR$/clone/templates/search.html" />
       </list>
     </option>
   </component>
@@ -673,19 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clone/templates/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#h5#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#h5#1;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#h5#2;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clone/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -720,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clone/templates/profile/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+        <state relative-caret-position="315">
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -745,6 +733,20 @@
             <element signature="n#style#0;n#h5#0;n#h5#3;n#div#2;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#0;n#h5#4;n#div#2;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#0;n#h5#5;n#div#2;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clone/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#h5#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#h5#1;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#h5#2;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
