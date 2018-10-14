@@ -17,24 +17,45 @@
             <a href="/user/{{profile.user.username}}" class="text-center"><h1 id="username"><b><i>{{profile.user.username}}</i></b></h1></a>
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {% endfor %}
+{% endfor %}
         {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Searching Projects-->
+
+        <div class="row">
+
+        {% if projects%}
+        <h2>Found {{projects|length}} of searched projects</h2>
+        {% else %}
+        <h2>That project does not exist</h2>
+        {% endif %}
+    </div>
+    <div class="row">
+
+        {%for project in projects %}
+
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <a href="{{project.url}}" class="text-center"><h1 id="username"><b><i>{{project.url}}</i></b></h1></a>
+            <h1>{{project.title}}</h1>
+
+        </div>
+
+        <!--End Searching Projects-->
+        {% endfor %}
+
 </div>
 </div>
 {% endblock %}

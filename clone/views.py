@@ -87,7 +87,10 @@ def search_profile(request):
 def search_project(request):
     if 'title' in request.GET and request.GET['title']:
         search_term = request.GET.get('title')
-        projects = Profile.search_project(search_term)
+        projects = Project.search_project(search_term)
+        print('projects')
+
+        print(projects)
         message = f'{search_term}'
 
         return render(request, 'search.html',{'message':message, 'projects':projects})
