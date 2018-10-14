@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+import numpy as np
 # Create your models here.
 class Profile(models.Model):
     photo = models.ImageField(upload_to='image/', null=True)
@@ -75,6 +75,11 @@ class Project(models.Model):
         return profiles
 
     @classmethod
+    def search_project(cls, search_term):
+        project = Project.objects.filter(title__icontains=search_term)
+        return project
+
+    @classmethod
     def get_profile_projects(cls, profile):
         projects = Project.objects.filter(profile__id=profile)
         return projects
@@ -88,58 +93,126 @@ class Project(models.Model):
     def get_single_project(cls, project_id):
         return cls.objects.get(pk=project_id)
 
+    def average_design(self):
+        all_ratings = list(map(lambda x: x.rating, self.designrating_set.all()))
+        return np.mean(all_ratings)
+
+    def average_usability(self):
+        all_ratings = list(map(lambda x: x.rating, self.usabilityrating_set.all()))
+        return np.mean(all_ratings)
+
+    def average_content(self):
+        all_ratings = list(map(lambda x: x.rating, self.contentrating_set.all()))
+        return np.mean(all_ratings)
+
     def __str__(self):
         return self.title
 
 
-class Rate(models.Model):
-    design = models.FloatField(default=0.0)
-    usability = models.FloatField(default=0.0)
-    content = models.FloatField(default=0.0)
-    profile = models.ForeignKey(Profile, related_name='profile_rating')
-    project = models.ForeignKey(Project, related_name='project_rating')
-
-    @classmethod
-    def average_design(cls, project):
-        project_ratings = cls.objects.filter(project=project)
-        rate = [ur.design for ur in project_ratings]
-        mean_design = sum(rate) / len(rate)
-        print(mean_design)
-        return mean_design
-
-    @classmethod
-    def average_usability(cls, project):
-        project_ratings = cls.objects.filter(project=project)
-        rate = [ur.usability for ur in project_ratings]
-        mean_usability = sum(rate) / len(rate)
-        print(mean_usability)
-        return mean_usability
-
-    @classmethod
-    def average_content(cls, project):
-        project_ratings = cls.objects.filter(project=project)
-        rate = [ur.content for ur in project_ratings]
-        mean_content = sum(rate) / len(rate)
-        print(mean_content)
-        return mean_content
-
-
-
-    @property
-    def average_rating(self, null=True):
-        rated = [i for i in [self.design, self.usability,
-                             self.content] if i != None]
-        rating = sum(rated[0:len(rated)]) / len(rated)
-        print(rating)
-        return rating
-
-    @classmethod
-    def get_last_project(cls):
-        return cls.objects.last()
-
-
+# class Rate(models.Model):
+#     design = models.FloatField(default=0.0)
+#     usability = models.FloatField(default=0.0)
+#     content = models.FloatField(default=0.0)
+#     profile = models.ForeignKey(Profile, related_name='profile_rating')
+#     project = models.ForeignKey(Project, related_name='project_rating')
+#
+#     @classmethod
+#     def average_design(cls, project):
+#         project_ratings = cls.objects.filter(project=project)
+#         rate = [ur.design for ur in project_ratings]
+#         mean_design = sum(rate) / len(rate)
+#         print(mean_design)
+#         return mean_design
+#
+#     @classmethod
+#     def average_usability(cls, project):
+#         project_ratings = cls.objects.filter(project=project)
+#         rate = [ur.usability for ur in project_ratings]
+#         mean_usability = sum(rate) / len(rate)
+#         print(mean_usability)
+#         return mean_usability
+#
+#     @classmethod
+#     def average_content(cls, project):
+#         project_ratings = cls.objects.filter(project=project)
+#         rate = [ur.content for ur in project_ratings]
+#         mean_content = sum(rate) / len(rate)
+#         print(mean_content)
+#         return mean_content
+#
+#
+#
+#     @property
+#     def average_rating(self, null=True):
+#         rated = [i for i in [self.design, self.usability,
+#                              self.content] if i != None]
+#         rating = sum(rated[0:len(rated)]) / len(rated)
+#         print(rating)
+#         return rating
+#
+#     @classmethod
+#     def get_last_project(cls):
+#         return cls.objects.last()
 
 
+class DesignRating(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10')
+    )
+    project = models.ForeignKey(Project)
+    pub_date = models.DateTimeField(auto_now=True)
+    profile = models.ForeignKey(Profile)
+    comment = models.CharField(max_length=200)
+    rating = models.IntegerField(choices=RATING_CHOICES, default=0)
+
+
+class UsabilityRating(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10')
+    )
+    project = models.ForeignKey(Project)
+    pub_date = models.DateTimeField(auto_now=True)
+    profile = models.ForeignKey(Profile)
+    comment = models.CharField(max_length=200)
+    rating = models.IntegerField(choices=RATING_CHOICES, default=0)
+
+
+class ContentRating(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10')
+    )
+    project = models.ForeignKey(Project)
+    pub_date = models.DateTimeField(auto_now=True)
+    profile = models.ForeignKey(Profile)
+    comment = models.CharField(max_length=200)
+    rating = models.IntegerField(choices=RATING_CHOICES, default=0)
 
 
 

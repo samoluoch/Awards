@@ -1,7 +1,7 @@
-from django.shortcuts import render,redirect
-from .models import Profile,Project,Rate
+from django.shortcuts import render,redirect,get_object_or_404
+from .models import Profile,Project,UsabilityRating,DesignRating,ContentRating
 from django.contrib.auth.models import User
-from .forms import RegistrationForm,ProjectForm,EditProfileForm,RateForm
+from .forms import RegistrationForm,ProjectForm,EditProfileForm,DesignForm,UsabilityForm,ContentForm
 from django.contrib.auth.decorators import login_required
 # from django.contrib.messages.context_processors.messages import
 from rest_framework.response import Response
@@ -17,8 +17,9 @@ import datetime
 
 # Create your views here.
 def home(request):
+    form=DesignForm()
     projects = Project.objects.all()
-    return render(request,'home.html',{"projects":projects})
+    return render(request,'home.html',{"projects":projects, "form":form})
 
 
 def register(request):
@@ -83,6 +84,17 @@ def search_profile(request):
         message = 'Type profile'
         return render(request, 'search.html', {'message':message})
 
+def search_project(request):
+    if 'title' in request.GET and request.GET['title']:
+        search_term = request.GET.get('title')
+        projects = Profile.search_project(search_term)
+        message = f'{search_term}'
+
+        return render(request, 'search.html',{'message':message, 'projects':projects})
+    else:
+        message = 'Type project'
+        return render(request, 'search.html', {'message':message})
+
 
 @login_required(login_url='/login')
 def edit_profile(request):
@@ -117,28 +129,53 @@ class MerchList(APIView):
             return Response(serializers.data, status=status.HTTP_201_CREATED)
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
-def rate(request, project_id):
-    if request.user.is_authenticated:
-        user = request.user
-        projects = Project.get_single_project(project_id)
-        if request.method == 'POST':
-            rates = RateForm(request.POST)
-            print(rates.is_valid())
-            if rates.is_valid():
-                rates.save()
-                rating = Rate.get_last_project()
-                rating.user = user
-                rating.post = projects
-                rating.save()
-                return redirect('home')
-        else:
-            rates = RateForm()
 
-        context = {
-            'rate_form': rates
-        }
-        return render(request, 'rate.html', context)
-    return redirect('home')
+
+def add_usability(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    if request.method == 'POST':
+        form = UsabilityForm(request.POST)
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.project = project
+            rate.user_name = request.user
+            rate.profile = request.user.profile
+
+            rate.save()
+        return redirect('home')
+
+    return render(request, 'home.html')
+
+def add_design(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    if request.method == 'POST':
+        form = DesignForm(request.POST)
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.project = project
+            rate.user_name = request.user
+            rate.profile = request.user.profile
+
+            rate.save()
+        return redirect('home')
+    else:
+        form = DesignForm()
+
+    return render(request, 'home.html',{'form': form})
+def add_content(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    if request.method == 'POST':
+        form = ContentForm(request.POST)
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.project = project
+            rate.user_name = request.user
+            rate.profile = request.user.profile
+
+            rate.save()
+        return redirect('home')
+
+    return render(request, 'home.html')
 
 
 
