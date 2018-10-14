@@ -6,7 +6,7 @@
         {% if profiles%}
         <h2>Found {{profiles|length}} of searched profile</h2>
         {% else %}
-        <h2>That username does not exist</h2>
+        <h2></h2>
         {% endif %}
     </div>
     <div class="row">
@@ -48,8 +48,23 @@
         {%for project in projects %}
 
         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-            <a href="{{project.url}}" class="text-center"><h1 id="username"><b><i>{{project.url}}</i></b></h1></a>
+
             <h1>{{project.title}}</h1>
+            <a href="{{project.url}}" class="text-center"><h5 id="username"><b><i>{{project.url}}</i></b></h5></a>
+
+            <h5>{{ project.rating.count }} <h5 style="color: green;">Design</h5>  average = {{ project.average_design | floatformat }} </h5>
+            <!--<h6 style="color: green;">Comments:</h6> {% for review in project.designrating_set.all %}-->
+                <!--<ul>{{review.comment}}</ul>-->
+                <!--{% endfor %}-->
+            <h5>{{ project.rating.count }} <h5 style="color: green;">Usability</h5> average = {{ project.average_usability | floatformat }} </h5>
+
+            <h5>{{ project.rating.count }} <h5 style="color: green;">Content</h5>  average = {{ project.average_content | floatformat }}</h5>
+
+                     <br><br>
+            <a href="{{project.url}}" class="blue-button">Visit site</a>
+
+
+
 
         </div>
 
