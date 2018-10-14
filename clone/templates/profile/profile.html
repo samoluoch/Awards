@@ -8,7 +8,8 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     {% if profile_details %}
-                    <img src="{{profile_details.photo.url}}" alt="photo">
+                    <h3 style="text-align:center; color: black;">My Profile Photo</h3>
+                    <img src="{{profile_details.photo.url}}" alt="photo" width='400' height='400'>
                     {% else %}
                     <img src="/static/images/dp.jpg" alt="avatar" width='200' height='200' style="align: center;">
                     {% endif %}
@@ -62,7 +63,7 @@
 
 
     <div class="row">
-        <h2>My Projects</h2>
+        <h3 style="color: black;">My Projects List</h3>
         {% for project in projects %}
         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
             <br><br>
