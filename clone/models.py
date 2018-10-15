@@ -109,51 +109,6 @@ class Project(models.Model):
         return self.title
 
 
-# class Rate(models.Model):
-#     design = models.FloatField(default=0.0)
-#     usability = models.FloatField(default=0.0)
-#     content = models.FloatField(default=0.0)
-#     profile = models.ForeignKey(Profile, related_name='profile_rating')
-#     project = models.ForeignKey(Project, related_name='project_rating')
-#
-#     @classmethod
-#     def average_design(cls, project):
-#         project_ratings = cls.objects.filter(project=project)
-#         rate = [ur.design for ur in project_ratings]
-#         mean_design = sum(rate) / len(rate)
-#         print(mean_design)
-#         return mean_design
-#
-#     @classmethod
-#     def average_usability(cls, project):
-#         project_ratings = cls.objects.filter(project=project)
-#         rate = [ur.usability for ur in project_ratings]
-#         mean_usability = sum(rate) / len(rate)
-#         print(mean_usability)
-#         return mean_usability
-#
-#     @classmethod
-#     def average_content(cls, project):
-#         project_ratings = cls.objects.filter(project=project)
-#         rate = [ur.content for ur in project_ratings]
-#         mean_content = sum(rate) / len(rate)
-#         print(mean_content)
-#         return mean_content
-#
-#
-#
-#     @property
-#     def average_rating(self, null=True):
-#         rated = [i for i in [self.design, self.usability,
-#                              self.content] if i != None]
-#         rating = sum(rated[0:len(rated)]) / len(rated)
-#         print(rating)
-#         return rating
-#
-#     @classmethod
-#     def get_last_project(cls):
-#         return cls.objects.last()
-
 
 class DesignRating(models.Model):
     RATING_CHOICES = (
