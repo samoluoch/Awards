@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 # from django.contrib.messages.context_processors.messages import
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializer import MerchSerializer
+from .serializer import MerchSerializer,ProfileMerchSerializer
 from rest_framework import status
 import datetime
 
@@ -115,10 +115,10 @@ def edit_profile(request):
 
 
 class MerchList(APIView):
-    def get(self, request, format=None):
-        all_merch_profiles = Profile.objects.all()
-        serializers = MerchSerializer(all_merch_profiles, many=True)
-        return Response(serializers.data)
+    # def get(self, request, format=None):
+    #     all_merch_profiles = Profile.objects.all()
+    #     serializers = MerchSerializer(all_merch_profiles, many=True)
+    #     return Response(serializers.data)
 
     def get(self, request, format=None):
         all_merch_projects = Project.objects.all()
@@ -127,6 +127,24 @@ class MerchList(APIView):
 
     def post(self, request, format=None):
         serializers = MerchSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class ProfileMerch(APIView):
+    def get(self, request, format=None):
+        all_merch_profiles = Profile.objects.all()
+        serializers = ProfileMerchSerializer(all_merch_profiles, many=True)
+        return Response(serializers.data)
+
+    # def get(self, request, format=None):
+    #     all_merch_projects = Project.objects.all()
+    #     serializers = MerchSerializer(all_merch_projects, many=True)
+    #     return Response(serializers.data)
+
+    def post(self, request, format=None):
+        serializers = ProfileMerchSerializer(data=request.data)
         if serializers.is_valid():
             serializers.save()
             return Response(serializers.data, status=status.HTTP_201_CREATED)
@@ -189,50 +207,3 @@ def add_content(request, project_id):
 
 
 
-
-
-
-
-
-# class MerchListProfile(APIView):
-#     def get(self, request, format=None):
-#         all_merch_profiles = Profile.objects.all()
-#         serializers = MerchSerializer(all_merch_profiles, many=True)
-#         return Response(serializers.data)
-#
-#
-#
-#     def post(self, request, format=None):
-#         serializers = MerchSerializer(data=request.data)
-#         if serializers.is_valid():
-#             serializers.save()
-#             return Response(serializers.data, status=status.HTTP_201_CREATED)
-#         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
-#
-
-
-
-
-# def register(request):
-#     if request.user.is_authenticated():
-#         return redirect('home')
-#     else:
-#         if request.method == 'POST':
-#             form = RegistrationForm(request.POST)
-#             if form.is_valid():
-#                 user = form.save(commit=False)
-#                 try:
-#                     user.is_active = False
-#                     user.save()
-#                 except:
-#                     messages.errors('Please Verify Email')
-#                 # current_site = get_current_site(request)
-#                 # to_email = form.cleaned_data.get('email')
-#                 # activation_email(user, current_site, to_email)
-#                 # return HttpResponse('Please confirm your email')
-#             return redirect('home.html')
-#
-#         else:
-#             form = RegistrationForm()
-#         return render(request, 'registration/signup.html',{'form':form})
-#

@@ -12,7 +12,8 @@ urlpatterns=[
     url(r'^search/$', views.search_project, name='search_project'),
     url(r'^edit/', views.edit_profile, name='edit_profile'),
     url(r'^upload/$', views.upload_project, name='upload_image'),
-    url(r'^api/merch/$', views.MerchList.as_view()),
+    url(r'^api/projects/$', views.MerchList.as_view()),
+    url(r'^api/profiles/$', views.ProfileMerch.as_view()),
     # url(r'^api/merchprofile/$', views.MerchListProfile.as_view())
     # url(r'^rate/project/(\d+)$', views.rate, name='rate'),
     url(r'^post/(?P<project_id>[0-9]+)/review_design/$', views.add_design, name='add_design'),
